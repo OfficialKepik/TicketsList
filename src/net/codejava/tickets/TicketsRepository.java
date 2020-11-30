@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 public class TicketsRepository extends CrudRepository<Tickets, Long>{
 	
-	@Query(value = "SELECT c FROM Customer c WHERE c.name LIKE '%' || :keyword || '%'"
+	@Query(value = "SELECT c FROM Tickets c WHERE c.name LIKE '%' || :keyword || '%'"
 	            + " OR c.email LIKE '%' || :keyword || '%'"
 	            + " OR c.address LIKE '%' || :keyword || '%'")
 	    public List<Tickets> search(@Param("keyword") String keyword);
